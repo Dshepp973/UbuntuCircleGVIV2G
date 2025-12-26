@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>V2G Learning Hub | Survival Psychology + Ubuntu Healing</title>
+  <meta name="description" content="A modern learning hub for Cognitive Dissonance, Stockholm-like dependency, Emotional Emancipation Circles, and Ubuntu-based narrative therapy." />
+  
+  <!-- Fonts: DM Serif Display (Agency/Editorial) + Inter (Clean/Modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* V2G Palette - Agency Refined */
+      --bg: #05050f;
+      --bg-soft: #0a0a16;
+      --text: #ffffff;
+      --text-muted: #9ca3af;
+      
+      --purple: #4f46e5; /* Slightly more vibrant indigo/purple */
+      --gold: #fbbf24;
+      --gold-dim: #b45309;
+
+      /* Teal Media-ish Structural Variables */
+      --border: 1px solid rgba(255,255,255,0.15);
+      --border-strong: 1px solid rgba(255,255,255,0.3);
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+
+      --font-head: 'DM Serif Display', serif;
+      --font-body: 'Inter', sans-serif;
+
+      --max-w: 1200px;
+    }
+
+    *{box-sizing:border-box}
+    
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.08), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(251, 191, 36, 0.05), transparent 40%);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a{color:inherit; text-decoration:none; transition: color .2s}
+    a:hover{color:var(--gold)}
+
+    /* Layout Utility */
+    .wrap{
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .spacer{height: 80px}
+    .spacer-sm{height: 40px}
+
+    /* TYPOGRAPHY */
+    h1,h2,h3,h4{
+      font-family: var(--font-head);
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.1;
+    }
+    h1{
+      font-size: clamp(42px, 5vw, 68px);
+      letter-spacing: -1px;
+    }
+    h2{
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 24px;
+    }
+    h3{
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    p{
+      margin: 0 0 16px;
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 65ch;
+    }
+    .lead{
+      font-size: 20px;
+      color: #e5e7eb;
+      max-width: 70ch;
+      line-height: 1.5;
+    }
+    .eyebrow{
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* Disclaimer Banner */
+    .disclaimer-banner {
+      background: var(--gold-dim);
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      padding: 8px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 200;
+    }
+
+    /* HEADER */
+    header{
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(5, 5, 15, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: var(--border);
+      padding: 16px 0;
+    }
+    .nav-inner{
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo{
+      font-family: var(--font-head);
+      font-size: 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo-mark{
+      width: 12px; height: 12px; background: var(--gold);
+      border-radius: 50%;
+    }
+    nav ul{
+      display: flex; gap: 32px; list-style: none; padding: 0; margin: 0;
+    }
+    nav a{
+      font-size: 14px; font-weight: 500; color: #e5e7eb;
+    }
+    .btn-nav{
+      background: var(--text); color: var(--bg);
+      padding: 10px 20px;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .btn-nav:hover{
+      background: var(--gold); color: var(--bg);
+    }
+    
+    @media(max-width:768px){
+      nav ul{display:none} /* Simple mobile hide for clarity */
+    }
+
+    /* BUTTONS & UI */
+    .btn{
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all .2s;
+      border: 1px solid transparent;
+    }
+    .btn-primary{
+      background: var(--purple); color: #fff;
+    }
+    .btn-primary:hover{
+      background: #4338ca;
+    }
+    .btn-outline{
+      background: transparent; border: var(--border-strong); color: #fff;
+    }
+    .btn-outline:hover{
+      border-color: #fff;
+    }
+    .btn-tag{
+      background: rgba(255,255,255,0.05);
+      border: var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .btn-tag:hover{
+      background: var(--purple);
+      color: #fff;
+      border-color: var(--purple);
+    }
+
+    /* SECTIONS */
+    .hero{
+      padding: 100px 0 80px;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .hero-tags{
+      display: flex; gap: 12px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .tag{
+      padding: 6px 12px;
+      border: var(--border);
+      border-radius: 99px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+
+    /* GRID / CARDS (The "Teal" Approach look) */
+    .grid-approaches{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,0.15); /* For borders */
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .approach-card{
+      background: var(--bg);
+      padding: 40px 32px;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .approach-num{
+      font-family: var(--font-head);
+      font-size: 48px;
+      color: rgba(255,255,255,0.1);
+      position: absolute; top: 20px; right: 24px;
+    }
+    .approach-card:hover{
+      background: var(--bg-soft);
+    }
+    .card-icon {
+      width: 48px; height: 48px;
+      margin-bottom: 24px;
+      color: var(--purple);
+      opacity: 0.8;
+    }
+
+    /* DROPDOWN LOGIC */
+    .btn-expand {
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: auto; 
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      transition: color 0.2s;
+    }
+    .btn-expand:hover { color: #fff; }
+    .btn-expand svg { transition: transform 0.3s ease; }
+    .btn-expand.active svg { transform: rotate(180deg); }
+    
+    .card-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, opacity 0.3s ease, margin 0.3s ease;
+      opacity: 0;
+      margin-top: 0;
+      font-size: 14px;
+      color: #d1d5db;
+    }
+    .card-details.open {
+      opacity: 1;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 16px;
+    }
+    .detail-point {
+      margin-bottom: 8px;
+      padding-left: 12px;
+      border-left: 2px solid var(--purple);
+    }
+    .detail-point strong { color: #fff; display:block; margin-bottom:2px;}
+
+
+    /* TOOLS / FORMS */
+    .tool-container{
+      background: var(--bg-soft);
+      border: var(--border);
+      padding: 40px;
+      border-radius: var(--radius-sm);
+    }
+    .form-grid{
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .form-group{margin-bottom: 0}
+    label{
+      display: block; font-size: 13px; font-weight: 500; 
+      margin-bottom: 8px; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    input, select, textarea{
+      width: 100%;
+      background: transparent;
+      border: var(--border);
+      color: #fff;
+      padding: 16px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      border-radius: 0; /* Agency style often sharp */
+      transition: border-color .2s;
+    }
+    input:focus, select:focus, textarea:focus{
+      outline: none;
+      border-color: var(--purple);
+    }
+    textarea{min-height: 120px; resize: vertical}
+    
+    .output-box{
+      background: #000;
+      border: var(--border);
+      padding: 24px;
+      margin-top: 24px;
+      font-family: var(--mono);
+      font-size: 14px;
+      color: #d1d5db;
+      white-space: pre-wrap;
+    }
+
+    /* FOOTER */
+    footer{
+      border-top: var(--border);
+      padding: 80px 0;
+      margin-top: 80px;
+    }
+    .footer-big{
+      font-family: var(--font-head);
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1;
+      margin-bottom: 40px;
+      max-width: 15ch;
+    }
+    .footer-links{
+      display: flex; gap: 24px; flex-wrap: wrap;
+      font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+    }
+    
+    @media(max-width: 768px){
+      .form-grid{grid-template-columns: 1fr}
+      .hero{padding: 60px 0}
+      .grid-approaches{border:none; gap: 24px; background: transparent}
+      .approach-card{border: var(--border)}
+    }
+  </style>
+</head>
+<body id="top">
+
+<div class="disclaimer-banner">
+  DISCLAIMER: This site is for educational purposes only. It does not constitute medical advice. V2G and GVI are not responsible for outcomes.
+</div>
+
+<header>
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <div class="logo-mark"></div>
+      V2G Learning Hub
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#explorer">Explorer</a></li>
+        <li><a href="#circle">Circle Builder</a></li>
+        <li><a href="#library">Library</a></li>
+      </ul>
+    </nav>
+    <a href="#explorer" class="btn-nav">Start Tool</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="wrap hero">
+    <div class="hero-tags">
+      <span class="tag">Cognitive Dissonance</span>
+      <span class="tag">Ubuntu Healing</span>
+      <span class="tag">Narrative Therapy</span>
+    </div>
+    <h1>From Survival to Agency:<br>A Better Way to Understand.</h1>
+    <div class="spacer-sm"></div>
+    <p class="lead">
+      We help educators and communities unpack <b>Stockholm-like dependency</b> and <b>Cognitive Dissonance</b> without shame—using Emotional Emancipation Circles and Ubuntu-based narrative practices.
+    </p>
+    <div class="spacer-sm"></div>
+    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center">
+      <a href="#explorer" class="btn btn-primary">Run Pattern Explorer</a>
+      <a href="#modules" class="btn btn-outline">Browse Modules</a>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- MODULES (Styled as "The Approach" with Dropdowns) -->
+  <section id="modules" class="wrap">
+    <span class="eyebrow">The Curriculum</span>
+    <h2>Understanding the Mechanism</h2>
+    
+    <div class="grid-approaches">
+      
+      <!-- Card 01 -->
+      <div class="approach-card">
+        <span class="approach-num">01</span>
+        <svg class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+        <h3>Cognitive Dissonance</h3>
+        <p>Conflicting beliefs create discomfort. The mind reduces it by rationalizing or attacking the messenger.</p>
+        
+        <button class="btn-expand">
+          Dive Deeper 
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="card-details">
+          <div class="detail-point">
+            <strong>Key Signs</strong>
+            Rationalizing harm, avoiding new facts, or anger at those who ask questions.
+          </div>
+          <div class="detail-point">
+            <strong>The Mechanism</strong>
+            The goal isn't to win a debate, but to reduce the internal fear that causes the defense.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 02 -->
+      <div class="approach-card">
+        <span class="approach-num">02</span>
+        <svg class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+        <h3>Dependency Patterns</h3>
+        <p>Under threat and reliance, people bond with controlling power. This is a survival strategy, not a character flaw.</p>
+        
+        <button class="btn-expand">
+          Dive Deeper 
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="card-details">
+          <div class="detail-point">
+            <strong>The Trap</strong>
+            Threat to survival + intermittent kindness from the threat = traumatic bonding.
+          </div>
+          <div class="detail-point">
+            <strong>Reframing</strong>
+            Instead of "Why do they stay?", ask "What barriers prevent them from leaving safely?"
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 03 -->
+      <div class="approach-card">
+        <span class="approach-num">03</span>
+        <svg class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <h3>Emotional Circles</h3>
+        <p>EEC-inspired containers for racialized and intergenerational trauma. We use witness and dignity restoration.</p>
+        
+        <button class="btn-expand">
+          Dive Deeper 
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="card-details">
+          <div class="detail-point">
+            <strong>The Golden Rule</strong>
+            No Fixing. We heal by being heard, not by being corrected or advised.
+          </div>
+          <div class="detail-point">
+            <strong>Structure</strong>
+            Check-in -> Agreements -> Story Share -> Witness -> Closing.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 04 -->
+      <div class="approach-card">
+        <span class="approach-num">04</span>
+        <svg class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+        <h3>Ubuntu Narrative</h3>
+        <p>"I am because we are." We re-author stories in community, separating the person from the problem.</p>
+        
+        <button class="btn-expand">
+          Dive Deeper 
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="card-details">
+          <div class="detail-point">
+            <strong>Externalization</strong>
+            The person is not the problem; the problem is the problem.
+          </div>
+          <div class="detail-point">
+            <strong>The Question</strong>
+            "How has the 'System of Silence' tried to convince you that you are alone?"
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 05 -->
+      <div class="approach-card">
+        <span class="approach-num">05</span>
+        <svg class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        <h3>Ethics & Limits</h3>
+        <p>Untrained facilitation can harm. We teach strict safety protocols and clear referral pathways.</p>
+        
+        <button class="btn-expand">
+          Dive Deeper 
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="card-details">
+          <div class="detail-point">
+            <strong>Red Lines</strong>
+            Threats of harm to self or others require immediate professional referral.
+          </div>
+          <div class="detail-point">
+            <strong>Role Check</strong>
+            You are a peer facilitator/educator, not a clinician. Know the difference.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 06 -->
+      <div class="approach-card">
+        <span class="approach-num">06</span>
+        <svg class="card-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+        </svg>
+        <h3>Practices & Integration</h3>
+        <p>Action builds new neural pathways. We use tools like the "Ubuntu Web" and boundary scripts.</p>
+        
+        <button class="btn-expand">
+          Dive Deeper 
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="card-details">
+          <div class="detail-point">
+            <strong>Micro-Move</strong>
+            Try the 'Boundary Script' today: "I can hear your anger, but I cannot continue this conversation if you call me names."
+          </div>
+          <div class="detail-point">
+            <strong>Daily Practice</strong>
+            Truth Journaling: Write one thing you know is true but felt afraid to say.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- EXPLORER TOOL -->
+  <section id="explorer" class="wrap">
+    <div style="max-width:800px; margin:0 auto">
+      <span class="eyebrow">Interactive Tool</span>
+      <h2>Pattern Explorer</h2>
+      <p class="lead" style="color:var(--text-muted); margin-bottom:40px">
+        Describe a situation to get questions, likely mechanisms, and compassionate next steps. Runs locally in your browser.
+      </p>
+
+      <div class="tool-container">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="lens">Lens</label>
+            <select id="lens">
+              <option value="self">Self (Personal Patterns)</option>
+              <option value="family">Family System</option>
+              <option value="work">Institution / Work</option>
+              <option value="community">Community / Culture</option>
+              <option value="media">Media Narratives</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pattern">Pattern</label>
+            <select id="pattern">
+              <option value="unsure">Not sure (Help me identify)</option>
+              <option value="dissonance">Cognitive Dissonance</option>
+              <option value="dependency">Dependency / Stockholm-like</option>
+              <option value="both">Mixed Pattern</option>
+            </select>
+          </div>
+        </div>
+        
+        <div style="margin-top:24px">
+          <div style="display:flex; justify-content:space-between; align-items:end; margin-bottom:12px">
+            <label for="story" style="margin:0">The Scenario</label>
+            <span style="font-size:12px; color:var(--text-muted)">Click a starter:</span>
+          </div>
+          
+          <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap">
+            <button class="btn-tag" data-text="At work, leadership claims we are a family, but anyone who questions the new policy is ignored or pushed out. I feel crazy for noticing.">🏢 Work Logic</button>
+            <button class="btn-tag" data-text="My family refuses to talk about the incident from last year. We pretend everything is normal, but the tension is high.">🏠 Family Silence</button>
+            <button class="btn-tag" data-text="I see news reports that contradict what I see with my own eyes in my neighborhood, but everyone online agrees with the news.">📺 Media Spin</button>
+          </div>
+
+          <textarea id="story" placeholder="Describe what is happening... (e.g., People are defending a system that harms them...)"></textarea>
+        </div>
+
+        <div class="form-grid" style="margin-top:24px">
+          <div class="form-group">
+            <label for="goal">Goal</label>
+            <select id="goal">
+              <option value="clarity">Clarity & Insight</option>
+              <option value="dialogue">Open Dialogue</option>
+              <option value="healing">Emotional Healing</option>
+              <option value="agency">Action & Agency</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tone">Output Tone</label>
+            <select id="tone">
+              <option value="gentle">Compassionate / Gentle</option>
+              <option value="direct">Direct / Analytical</option>
+              <option value="teaching">Educational</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:32px; display:flex; gap:16px; align-items:center">
+          <button id="genExplorer" class="btn btn-primary">Generate Analysis</button>
+          <button id="copyExplorer" class="btn btn-outline" style="border:none; color:var(--text-muted)">Copy to Clipboard</button>
+        </div>
+
+        <div class="output-box" id="explorerOut">// Analysis will appear here...</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- CIRCLE BUILDER -->
+  <section id="circle" class="wrap">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:60px; align-items:start">
+      <div>
+        <span class="eyebrow">Facilitation</span>
+        <h2>Ubuntu Circle Builder</h2>
+        <p>Create a responsible session plan for an EEC-inspired or Ubuntu narrative circle. Includes safety agreements, flow, and closing rituals.</p>
+        
+        <div style="margin-top:40px; padding:30px; border:var(--border); border-left: 2px solid var(--purple)">
+          <h3>Guardrails</h3>
+          <p style="font-size:14px">These circles are for <b>witness and reflection</b>, not clinical therapy. Always have a referral list ready for acute crises.</p>
+        </div>
+      </div>
+
+      <div class="tool-container" style="background:var(--bg)">
+        <div class="form-group">
+          <label for="circleType">Circle Model</label>
+          <select id="circleType">
+            <option value="eec">EEC-Inspired (Emotional Emancipation)</option>
+            <option value="ubuntu">Ubuntu Narrative Circle</option>
+            <option value="hybrid">Hybrid Model</option>
+          </select>
+        </div>
+        
+        <div class="form-grid" style="margin-top:24px">
+          <div class="form-group">
+            <label for="audience">Audience</label>
+            <select id="audience">
+              <option value="adults">Adults</option>
+              <option value="youth">Youth (13-18)</option>
+              <option value="community">Mixed Community</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="duration">Time</label>
+            <select id="duration">
+              <option value="75">75 Minutes</option>
+              <option value="90" selected>90 Minutes</option>
+              <option value="120">120 Minutes</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:24px">
+          <label for="theme">Theme (Optional)</label>
+          <input type="text" id="theme" placeholder="e.g. Belonging, Internalized Narratives...">
+        </div>
+
+        <div style="margin-top:32px">
+          <button id="genCircle" class="btn btn-outline" style="width:100%; justify-content:center">Generate Plan</button>
+        </div>
+        
+        <div class="output-box" id="circleOut" style="margin-top:24px; max-height:300px; overflow-y:auto">// Plan will generate here...</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="wrap">
+    <div style="text-align:center; max-width:600px; margin:0 auto">
+      <span class="eyebrow">Check for Understanding</span>
+      <h2>Quick Quiz</h2>
+      <div id="quizContainer" style="margin-top:40px; text-align:left">
+        <!-- JS Injected -->
+      </div>
+      <div id="quizControls" style="margin-top:24px; display:flex; gap:16px; justify-content:center">
+        <button id="gradeQuiz" class="btn btn-primary">Check Answers</button>
+        <button id="resetQuiz" class="btn btn-outline">Reset</button>
+      </div>
+      <div id="score" style="margin-top:16px; font-family:var(--font-head); font-size:24px; color:var(--gold)"></div>
+    </div>
+  </section>
+
+  <!-- FACILITATOR'S POCKET GUIDE (Replaces Library) -->
+  <section id="library" class="wrap" style="margin-top:100px; border-top:var(--border); padding-top:60px">
+    <span class="eyebrow">Practical Tools</span>
+    <h2>Facilitator's Pocket Guide</h2>
+    <p style="margin-bottom:40px">Keep this handy during sessions. A quick checklist to ensure safety and scripts for when the room gets heavy.</p>
+
+    <div style="display:grid; grid-template-columns: 1fr 1.5fr; gap:40px; align-items:start">
+      
+      <!-- Left: Interactive Checklist -->
+      <div class="tool-container" style="background:var(--bg); border:var(--border-strong)">
+        <h3 style="display:flex; align-items:center; gap:10px; font-size:18px; color:var(--gold)">
+          <svg style="width:20px; height:20px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Readiness Checklist
+        </h3>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-top:20px">
+          <label style="display:flex; align-items:center; gap:12px; cursor:pointer; text-transform:none; letter-spacing:0; color:#fff">
+            <input type="checkbox" style="width:20px; height:20px;">
+            <span>Private, quiet space secured</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:12px; cursor:pointer; text-transform:none; letter-spacing:0; color:#fff">
+            <input type="checkbox" style="width:20px; height:20px;">
+            <span>Agreements posted/visible</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:12px; cursor:pointer; text-transform:none; letter-spacing:0; color:#fff">
+            <input type="checkbox" style="width:20px; height:20px;">
+            <span>Crisis referral list on hand</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:12px; cursor:pointer; text-transform:none; letter-spacing:0; color:#fff">
+            <input type="checkbox" style="width:20px; height:20px;">
+            <span>Tissues & water available</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:12px; cursor:pointer; text-transform:none; letter-spacing:0; color:#fff">
+            <input type="checkbox" style="width:20px; height:20px;">
+            <span>I am grounded & ready to listen</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Right: Scripts Grid -->
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px">
+        <div class="approach-card" style="padding:24px">
+          <h4 style="font-size:16px; color:var(--purple); margin-bottom:8px">When tension rises</h4>
+          <p style="font-size:14px; font-style:italic; margin:0; color:#fff">
+            "Let's pause for a moment. Everyone take a breath. Remember, we are here to witness, not to debate or fix."
+          </p>
+        </div>
+
+        <div class="approach-card" style="padding:24px">
+          <h4 style="font-size:16px; color:var(--purple); margin-bottom:8px">If someone overshares</h4>
+          <p style="font-size:14px; font-style:italic; margin:0; color:#fff">
+            "Thank you for trusting us with that. I want to pause to ensure you feel safe sharing this much in this specific group."
+          </p>
+        </div>
+
+        <div class="approach-card" style="padding:24px">
+          <h4 style="font-size:16px; color:var(--purple); margin-bottom:8px">Closing the container</h4>
+          <p style="font-size:14px; font-style:italic; margin:0; color:#fff">
+            "What is said here stays here. What is learned here leaves here. Take care of yourselves as you step back into the world."
+          </p>
+        </div>
+
+        <div class="approach-card" style="padding:24px">
+          <h4 style="font-size:16px; color:var(--purple); margin-bottom:8px">Crisis Handoff</h4>
+          <p style="font-size:14px; font-style:italic; margin:0; color:#fff">
+            "I hear how much pain you are in. I am not a therapist, but I can help you connect with one right now."
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-big">
+      Creative with a conscience.<br>
+      <span style="color:var(--text-muted)">Healing with community.</span>
+    </div>
+    
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px; border-top:var(--border); padding-top:40px">
+      <div>
+        <h4 style="font-size:16px; margin-bottom:12px; color:var(--gold); letter-spacing:1px; text-transform:uppercase;">The School That Never Closes</h4>
+        <p style="font-size:14px; margin-bottom:24px">
+          <b>Ifá Principle:</b> Everything and everyone is a teacher—especially the mistakes. There is no finish line; the instruction never stops.
+        </p>
+        <div class="footer-links">
+          <a href="https://www.v2gmultimedia.com" target="_blank">V2GMultimedia</a>
+          <a href="https://www.TheInvenityCosmic.com" target="_blank">The Invenity Cosmic</a>
+          <a href="https://www.NahuceGVI.org" target="_blank">Nahuce GVI</a>
+        </div>
+      </div>
+      
+      <div style="font-size:13px; color:var(--text-muted); text-align:right">
+        <span style="display:block; margin-bottom:8px; font-weight:600; color:var(--text); letter-spacing:1px; text-transform:uppercase">Community Resource</span>
+        <p>Educational use only. Not a substitute for clinical therapy or medical advice.</p>
+        <p>V2G and GVI are not responsible for interpretation or application of this material.</p>
+        <p>&copy; 2025 V2G Learning Hub</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------------------------
+   Logic Scripts (Defensive)
+--------------------------- */
+
+// Helper to safely add event listeners
+function safeAddListener(id, event, handler) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener(event, handler);
+  } else {
+    // console.warn('Element not found: ' + id); // Optional debugging
+  }
+}
+
+/* Accordion Logic for Modules */
+(function(){
+  document.querySelectorAll('.btn-expand').forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Toggle active class on button (for arrow rotation)
+      this.classList.toggle('active');
+      
+      // Toggle details container
+      const details = this.nextElementSibling;
+      if (details.classList.contains('open')) {
+        details.classList.remove('open');
+        details.style.maxHeight = null; // Close it
+      } else {
+        details.classList.add('open');
+        // Set max-height to scrollHeight to allow transition
+        details.style.maxHeight = details.scrollHeight + "px";
+      }
+    });
+  });
+})();
+
+/* Pattern Explorer */
+(function(){
+  const lensEl = document.getElementById('lens');
+  const patternEl = document.getElementById('pattern');
+  const storyEl = document.getElementById('story');
+  const goalEl = document.getElementById('goal');
+  const toneEl = document.getElementById('tone');
+  const outEl = document.getElementById('explorerOut');
+
+  // Activate Starter Chips
+  const storyBox = document.getElementById('story');
+  if(storyBox) {
+    document.querySelectorAll('.btn-tag').forEach(btn => {
+      btn.addEventListener('click', () => {
+        storyBox.value = btn.getAttribute('data-text');
+        // Briefly highlight box to show change
+        storyBox.style.borderColor = 'var(--purple)';
+        setTimeout(() => storyBox.style.borderColor = 'var(--border)', 300);
+      });
+    });
+  }
+
+  const tonePhrases = {
+    gentle: { lead: "Let’s look at this with compassion.", close: "Move slowly. Choose one small step." },
+    direct:  { lead: "Here is the mechanism and the move.", close: "Action creates clarity." },
+    teaching:{ lead: "Breakdown of concepts:", close: "Review these definitions." }
+  };
+
+  function generate(){
+    if(!lensEl || !patternEl || !goalEl || !toneEl || !outEl) return;
+    
+    const t = tonePhrases[toneEl.value] || tonePhrases.gentle;
+    const storyVal = storyEl ? storyEl.value : "(No story provided)";
+    
+    outEl.textContent = 
+`=== EXPLORER OUTPUT ===
+Lens: ${lensEl.value.toUpperCase()} | Pattern: ${patternEl.value.toUpperCase()}
+
+${t.lead}
+
+SCENARIO ANALYSIS:
+${storyVal}
+
+KEY QUESTIONS:
+1. What fear is being protected here?
+2. What belief competes with reality?
+3. What is the cost of speaking the truth?
+
+NEXT STEP (${goalEl.value.toUpperCase()}):
+- If Cognitive Dissonance: Name the two conflicting truths.
+- If Dependency: Identify one safe way to detach or build outside support.
+
+${t.close}`;
+  }
+
+  safeAddListener('genExplorer', 'click', generate);
+  safeAddListener('copyExplorer', 'click', () => {
+    if(!outEl) return;
+    navigator.clipboard.writeText(outEl.textContent);
+    const copyBtn = document.getElementById('copyExplorer');
+    if(copyBtn) {
+      const originalText = copyBtn.textContent;
+      copyBtn.textContent = "Copied!";
+      setTimeout(() => copyBtn.textContent = "Copy to Clipboard", 1500);
+    }
+  });
+})();
+
+/* Circle Builder */
+(function(){
+  const outEl = document.getElementById('circleOut');
+  
+  safeAddListener('genCircle', 'click', () => {
+    if(!outEl) return;
+    const typeEl = document.getElementById('circleType');
+    const audEl = document.getElementById('audience');
+    const durEl = document.getElementById('duration');
+    const themeEl = document.getElementById('theme');
+    
+    if(!typeEl || !audEl || !durEl || !themeEl) return;
+
+    const type = typeEl.value;
+    const aud = audEl.value;
+    const dur = durEl.value;
+    const theme = themeEl.value;
+
+    outEl.textContent = 
+`=== SESSION PLAN: ${type.toUpperCase()} ===
+Audience: ${aud} | Time: ${dur} min
+Theme: ${theme || "General Session"}
+
+1. ARRIVAL (10m): Grounding, breathwork.
+2. AGREEMENTS (10m): Confidentiality, Right to Pass, No Fixing.
+3. STORY SHARE (${parseInt(dur)-40}m): Witnessing without judgment.
+4. CLOSING (10m): "I am because we are."
+
+REMINDER: This is a peer circle, not therapy. Pause if safety is compromised.`;
+  });
+})();
+
+/* Quiz */
+(function(){
+  const container = document.getElementById('quizContainer');
+  if(!container) return;
+
+  const questions = [
+    { q: "Cognitive Dissonance is...", opts: ["A personality flaw", "Discomfort from conflicting beliefs", "A medical condition"], a: 1 },
+    { q: "Stockholm-like dependency involves...", opts: ["Bonding with power for survival", "Being naturally loyal", "Ignoring reality for fun"], a: 0 },
+    { q: "Ubuntu healing focuses on...", opts: ["Individual isolation", "Relational identity (I am because we are)", "Debating facts"], a: 1 }
+  ];
+  
+  let selections = [null, null, null];
+
+  function render(){
+    container.innerHTML = '';
+    questions.forEach((item, idx) => {
+      const d = document.createElement('div');
+      d.style.marginBottom = "24px";
+      d.innerHTML = `<h4 style="margin-bottom:12px">${idx+1}. ${item.q}</h4>`;
+      const optsDiv = document.createElement('div');
+      optsDiv.style.display = "grid";
+      optsDiv.style.gap = "8px";
+      
+      item.opts.forEach((opt, oIdx) => {
+        const btn = document.createElement('div');
+        btn.textContent = opt;
+        btn.style.padding = "12px";
+        btn.style.border = "1px solid rgba(255,255,255,0.2)";
+        btn.style.cursor = "pointer";
+        if(selections[idx] === oIdx) {
+          btn.style.background = "var(--purple)";
+          btn.style.borderColor = "var(--purple)";
+        }
+        btn.onclick = () => { selections[idx] = oIdx; render(); };
+        optsDiv.appendChild(btn);
+      });
+      d.appendChild(optsDiv);
+      container.appendChild(d);
+    });
+  }
+
+  safeAddListener('gradeQuiz', 'click', () => {
+    let score = 0;
+    selections.forEach((s, i) => { if(s === questions[i].a) score++; });
+    const scoreEl = document.getElementById('score');
+    if(scoreEl) scoreEl.textContent = `Score: ${score} / ${questions.length}`;
+  });
+
+  safeAddListener('resetQuiz', 'click', () => {
+    selections = [null, null, null];
+    const scoreEl = document.getElementById('score');
+    if(scoreEl) scoreEl.textContent = "";
+    render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
